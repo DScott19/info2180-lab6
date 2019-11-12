@@ -65,13 +65,8 @@ $superheroes = [
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
 
-?php
+<?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
   $i=0;
   if (isset($_GET['query']) && !empty($_GET['query'])) {
