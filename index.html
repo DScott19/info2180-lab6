@@ -2,15 +2,21 @@
 <html lang="en">
   <head>
   	<title>INFO2180-Lab 6</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script> 
     <script src="app.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body>
 	<h1>Avengers Character Search</h1>
-	<div class="buttons"> 
-    	<button class="Search">Search</button>
-	</div>
-
+	   <form>
+	       <input id="searchbar" type="text" name="superhero" placeholder="eg.Spiderman or Peter Parker" />        	
+	       <button id="Search">Search</button>
+      </form>
+    <h2>Result</h2>	
+	<div id="result"></div>
 
 </body>
 </html>
