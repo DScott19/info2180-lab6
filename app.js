@@ -1,37 +1,30 @@
+window.onload = function() {
 
-document.addEventListener("DOMContentLoaded",() => {
+  var searchBtn = document.querySelector('#Search');
+  var httpRequest;
 
-let button = document.getElementsByClassName("Search");
-addToButton(button);
-});
+  searchBtn.addEventListener('click', function(element) {
+    element.preventDefault();
 
-function addToButton(element){
-	for(let i=0;i<element.length;i++){
-		element[i].addEventListener("click",function (){
-			let xhr=new XMLHttpRequest();
-			xhr.open("GET","superheroes.php",true);
-			xhr.onreadystatechange=function(){
-				 if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-					alert(xhr.responseText);
-				 }
-			};
-			xhr.send();
-			
-		});
-	}
-	
-}
+    httpRequest = new XMLHttpRequest();
 
-	
+    var input=document.getElementById("searchbar").value;
+    var url = "superheroes.php?query="+input;
+    httpRequest.onreadystatechange = loadSuperheroes;
+    httpRequest.open('GET', url);
+    httpRequest.send();
+  });
 
+  function loadSuperheroes() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      if (httpRequest.status === 200) {
+        var response = httpRequest.responseText;
+        var result = document.querySelector('#result');
+        result.innerHTML = response;
+      } else {
+        alert('There was a problem with the request.');
+      }
+    }
+  }
 
-
-
-
-	
-
-
-
-
-
-
+};
