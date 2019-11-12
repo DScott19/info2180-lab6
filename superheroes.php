@@ -74,8 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
      foreach($superheroes as $superhero){
        if($superhero['alias']===$_GET['query'] || $superhero['name']===$_GET['query']){
         ?>
-        <h3><?= $superhero['alias'];?></h3>
-        <h4><?= $superhero['name'];?></h4>
+        <h3><?= strtoupper($superhero['alias']);?></h3>
+        <h4>A.K.A <?=strtoupper($superhero['name']);?></h4>
         <p><?= $superhero['biography'];?></p>
         <?php
           $i++;
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
        }
      }
      if($i===0){
-       echo "Superhero not found";
+       echo "<font color ='red'>SUPERHERO NOT FOUND" ;
      }
   }else{
     
