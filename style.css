@@ -1,9 +1,12 @@
 body{
     display:flex;
     flex-direction:column;
-    justify-content:center;
-    align-items:center;
+   justify-content:center;
+   align-items:center;
     background-color:#DFD2C9 ;
+    font-family:arial;
+    font-weight: bold;
+    
 }
 
 
@@ -13,4 +16,39 @@ h1{
     border: 1px solid white;
     padding:10px;
     margin-top:-7px;
+    text-align: center;
 }
+
+#searchbar{
+    width:85%;
+    border-radius:5px;
+    background-color: #EBDEF0;
+}
+
+#Search{
+    display: inline-block;
+    background-color:#86608E ;
+    color: white;
+    border-radius: 5px;
+}
+
+form,#description,h2{
+    width:50%;
+}
+
+#result{
+    display:grid;
+    justify-content:center;
+    align-content:center;
+    width:50%;
+}
+
+h2{
+    border-bottom: 3px solid white;
+}
+
+li{
+    margin-left:-320px;
+}
+
+
